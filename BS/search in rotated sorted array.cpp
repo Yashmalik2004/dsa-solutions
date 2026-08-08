@@ -1,5 +1,5 @@
-// #include<b1ts/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
 // int main(){
   
@@ -46,3 +46,12 @@ public:
         return -1;
     }
 };
+
+int main(){
+  Solution s;
+  vector<int> arr={7,8,9,1,2,3,4,5,6};
+  int key=1;
+  cout<<s.search(arr,key)<<endl;
+  return 0;
+  
+}
