@@ -1,39 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using int64 = long long;
+using ll = long long;
 
-const int64 MOD = 1000000007;
+const ll MOD = 1000000007;
 
-int64 sumRange(int64 l, int64 r) {
-    l %= MOD;
-    r %= MOD;
+ll sumRange(ll l, ll r) {
+    __int128 a = (l + r) % MOD;
+    __int128 b = (r - l + 1) % MOD;
 
-    int64 sum = (l + r) % MOD;
-    int64 cnt = (r - l + 1) % MOD;
-    if (cnt % 2 == 0)
-        cnt /= 2;
+    if (a % 2 == 0)
+        a /= 2;
     else
-        sum /= 2;
+        b /= 2;
 
-    return (sum * cnt) % MOD;
+    return (ll)((a * b) % MOD);
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int64 n;
+    ll n;
     cin >> n;
 
-    int64 ans = 0;
-    for (int64 l = 1; l <= n; ) {
-        int64 q = n / l;
-        int64 r = n / q;
+    ll ans = 0;
 
-        int64 sumD = sumRange(l, r);
+    for (ll l = 1; l <= n; ) {
+        ll q = n / l;
+        ll r = n / q;
 
-        ans = (ans + (sumD * (q % MOD)) % MOD) % MOD;
+        ll sumD = sumRange(l, r);
+
+        __int128 contribution = (__int128)sumD * (q % MOD);
+        ans = (ans + (ll)(contribution % MOD)) % MOD;
 
         l = r + 1;
     }
