@@ -2,17 +2,17 @@
 using namespace std;
 
 const long long MOD = 1000000007;
-const long long PHI = MOD - 1;
 
-long long power(long long a, long long b, long long mod) {
+long long power(long long a, long long b) {
     long long ans = 1;
 
     while (b > 0) {
-        if (b & 1)
-            ans = (ans * a) % mod;
+        if (b % 2 == 1) {
+            ans = (ans * a) % MOD;
+        }
 
-        a = (a * a) % mod;
-        b >>= 1;
+        a = (a * a) % MOD;
+        b /= 2;
     }
 
     return ans;
@@ -29,11 +29,7 @@ int main() {
         long long a, b;
         cin >> a >> b;
 
-        long long exponent = power(b, a, PHI);
-
-        long long ans = power(a, exponent, MOD);
-
-        cout << ans << '\n';
+        cout << power(a, b) << '\n';
     }
 
     return 0;
