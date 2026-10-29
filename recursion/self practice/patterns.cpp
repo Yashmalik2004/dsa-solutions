@@ -37,27 +37,39 @@
 //   return 0;
 // }
 
-// sum of n numbers using recursion
+// // sum of n numbers using recursion
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int fnc(int n,int sum){
+//   if(n==0) return sum;
+//   sum+=n;
+//   fnc(n-1,sum);
+// }
+// int main(){
+//   int n;
+//   cin>>n;
+//   int sum = fnc(n,0);
+//   cout<<sum;
+//   return 0;
+// }
+
 #include<bits/stdc++.h>
 using namespace std;
 
-int fnc(int n,int sum){
-  if(n==0) return sum;
-  sum+=n;
-  fnc(n-1,sum);
-}
+// int x(int n){
+//   if(n<1) return;
+//   return 
+// }
 int main(){
-  int n;
-  cin>>n;
-  int sum = fnc(n,0);
-  cout<<sum;
+  cout<<123/10;
   return 0;
 }
 
 
 
 
-
+int a,b,c;
 
 
 
